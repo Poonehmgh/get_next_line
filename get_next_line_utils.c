@@ -6,7 +6,7 @@
 /*   By: pmoghadd <pmoghadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 21:07:48 by pmoghadd          #+#    #+#             */
-/*   Updated: 2022/06/13 13:21:53 by pmoghadd         ###   ########.fr       */
+/*   Updated: 2022/06/18 12:22:42 by pmoghadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ char	*ft_strdup(const char *s)
 	return (dst);
 }
 
-char	*ft_strcat(char *dst, const char *src)
+char	*ft_strcat(char *dst, char *src)
 {
 	size_t	i;
 	size_t	dst_len;
@@ -87,6 +87,7 @@ char	*ft_strcat(char *dst, const char *src)
 		dst[dst_len + i] = src[i];
 		i++;
 	}
+	ft_bzero(src, BUFFER_SIZE + 1);
 	dst[dst_len + i] = 0;
 	return (dst);
 }
